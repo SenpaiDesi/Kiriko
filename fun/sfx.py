@@ -45,7 +45,7 @@ class sfx(commands.Cog):
             vc = await channel.connect()
         except discord.ClientException:
             return await interaction.response.send_message(f"Sorry I am already playing in another channel. That channel being {channel.mention}", ephemeral=True)
-        source= discord.FFmpegPCMAudio(source= f"D:/littlefox/Repos/Kiriko/fun/sfx/{line}.ogg")
+        source= discord.FFmpegPCMAudio(source= f"/root/Kiriko/fun/sfx/{line}.ogg")
         await interaction.response.send_message(f"Okay, Playing in {channel.mention}", ephemeral=True)
         vc.play(source)
         while vc.is_playing():
